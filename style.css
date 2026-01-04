@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+/* Товчны загвар */
+.switch-btn {
+  position: relative;
+  width: 140px;
+  height: 40px;
+  background: transparent;
+  border: 3px solid white;
+  border-radius: 40px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.switch-btn span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.switch-btn span:first-child {
+  left: 15px;
+}
+
+.switch-btn span:nth-child(2) {
+  right: 15px;
+  opacity: 0;
+}
+
+.switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: white;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+/* Pause горим */
+.switch-btn.slide .switch {
+  left: 50%;
+}
+
+.switch-btn.slide span:first-child {
+  opacity: 0;
+}
+
+.switch-btn.slide span:nth-child(2) {
+  opacity: 1;
+}
